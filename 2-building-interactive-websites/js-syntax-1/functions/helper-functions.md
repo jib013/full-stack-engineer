@@ -25,3 +25,20 @@ In the example above:
     Finally, 59 is returned back to the function call getFahrenheit(15).
 
 We can use functions to section off small bits of logic or tasks, then use them when we need to. Writing helper functions can help take large and difficult tasks and break them into smaller and more manageable tasks.
+
+
+
+function monitorCount(rows, columns) {
+  return rows * columns;
+}
+
+function costOfMonitors (rows, columns) {
+  return monitorCount(rows, columns) * 200;
+}
+
+const totalCost = costOfMonitors(5,4);
+
+console.log(totalCost);
+
+
+
