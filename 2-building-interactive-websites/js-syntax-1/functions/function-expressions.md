@@ -29,8 +29,8 @@ const plantNeedsWater = function(day) {
   }
 }
 
-plantNeedsWater('Tuesday');
-
 console.log(plantNeedsWater('Tuesday'));
+
+
 
 
