@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Code Challenges</title>
+</head>
+
+<body>
+
+    <p>Write a function, greetWorld(). Your function should have no parameters and return the string 'Hello, World!'.
+    </p>
+    <script>
+        const greetWorld = () => 'Hello, World!';
+    </script>
+
+    <p>The most common minimum age to vote is 18. Write a function canIVote() that takes in a number, representing the
+        person’s age, and returns the boolean true if they are 18 years old or older, and the boolean false if they are
+        not.</p>
+    <script>
+        const canIVote = number => {
+            if (number >= 18) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        console.log(canIVote(19)) // Should print true
+    </script>
+
+    <p>Write a function, agreeOrDisagree(), that takes in two strings, and returns 'You agree!' if the two strings are
+        the same and 'You disagree!' if the two strings are different.</p>
+    <script>
+        const agreeOrDisagree = (string1, string2) => {
+            if (string1 === string2) {
+                return 'You agree!';
+            } else {
+                return 'You disagree!';
+            }
+        }
+
+        console.log(agreeOrDisagree("yep", "yep"))
+        // Should print 'You agree!'
+    </script>
+
+    <p></p>
+    
+</body>
+
+</html>

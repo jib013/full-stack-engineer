@@ -1,0 +1,97 @@
+<script>
+    function formatDate(userDate) {
+      // format from M/D/YYYY to YYYYMMDD
+      let returnDate = new Date(userDate);
+      
+      let y = returnDate.getFullYear();
+      let m = returnDate.getMonth() + 1;
+      let d = returnDate.getDate();
+      
+      y = y.toString();
+      m = m.toString();
+      d = d.toString();
+      
+      if(m.length == 1){
+        m = '0' + m;
+      }
+      
+      if(d.length == 1){
+        d = '0' + d;
+      }
+      
+      returnDate = y + m + d;
+      
+      return returnDate;
+    }
+    
+    console.log(formatDate("12/31/2014"));    </script>
+    
+    Function appendChildren should add a new child div to each existing div. New divs should be decorated by calling decorateDiv. 
+    
+    for example, after appendChildren is executed, the following divs: 
+    
+    <div id="a">
+        <div id="b">
+        </div>
+    </div>
+    
+    should take the following form (assuming decorateDiv does nothing:)
+    
+    <div id="a">
+        <div id="b">
+            <div></div>
+        </div>
+        <div></div>
+    </div>
+    
+    //the code below causes an infinite loop unless you create an array of the existing divs in var allDivs.
+    
+    <script>
+    function appendChildren(decorateDiv) {
+      var allDivs = Array.from(document.getElementsByTagName("div"));
+    
+      for (var i = 0; i < allDivs.length; i++) {
+        var newDiv = document.createElement("div");
+        decorateDiv(newDiv);
+        allDivs[i].appendChild(newDiv);
+      }
+    }
+    
+    // Example case. 
+    document.body.innerHTML = `
+    <div id="a">
+      <div id="b">
+      </div>
+    </div>`;
+    
+    //appendChildren(function(div) {});
+    console.log(document.body.innerHTML);
+    </script>
+    
+    
+    
+    
+    
+    /*
+        The following two tables are used to define users and their respective roles:
+        TABLE users
+          id INTEGER NOT NULL PRIMARY KEY,
+          userName VARCHAR(50) NOT NULL
+        TABLE roles
+          id INTEGER NOT NULL PRIMARY KEY,
+          role VARCHAR(20) NOT NULL
+          
+        The users_roles table should contain the mapping between each user and their roles. Each user can have many roles, and each role can have many users.
+        Modify the provided SQLite create table statement so that:
+        - Only users from the users table can exist within users_roles.
+        - Only roles from the roles table can exist within users_roles.
+        - A user can only have a specific role once.
+    */
+    
+    CREATE TABLE users_roles (
+      userId INTEGER NOT NULL,
+      roleId INTEGER NOT NULL,
+      FOREIGN KEY(userId) REFERENCES users(id),
+      FOREIGN KEY(roleId) REFERENCES roles(id),
+      PRIMARY KEY (userId, roleId)
+    )
