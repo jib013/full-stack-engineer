@@ -45,8 +45,401 @@
         // Should print 'You agree!'
     </script>
 
+    <p>Write a function, lifePhase(), that takes in a person’s age, as a number, and returns which phase of life they
+        are in.<br><br>
+
+        Here are the classifications:
+        0-3 should return 'baby'
+        4-12 should return 'child'
+        13-19 should return 'teen'
+        20-64 should return 'adult'
+        65-140 should return 'senior citizen'
+        If the number is less than 0 or greater than 140, the program should return 'This is not a valid age'</p>
+    <p>Note: this funciton will fail unless it checks age numerically. Checking if age is < 0 or> 140 at the end throws
+            an error.</p>
+    <script>
+        // Write your function here:
+        const lifePhase = age => {
+            if (age < 0 || age > 140) {
+                return 'This is not a valid age';
+            } else if (age >= 0 && age <= 3) {
+                return 'baby';
+            } else if (age >= 4 && age <= 12) {
+                return 'child';
+            } else if (age >= 13 && age <= 19) {
+                return 'teen';
+            } else if (age >= 20 && age <= 64) {
+                return 'adult';
+            } else if (age >= 65 && age <= 140) {
+                return 'senior citizen';
+            } else if (age < 0) {
+                return 'This is not a valid age';
+            }
+        };
+
+
+        // Uncomment the line below when you're ready to try out your function
+        console.log(lifePhase(5)) //should print 'child'
+
+        // We encourage you to add more function calls of your own to test your code!
+    </script>
+
+
+
+    <p>Write a function, finalGrade(). It should:<br><br>
+
+        take three arguments of type number<br>
+        find the average of those three numbers<br>
+        return the letter grade (as a string) that the average corresponds to
+        return ‘You have entered an invalid grade.’ if any of the three grades are less than 0 or greater than 100<br>
+        0-59 should return: 'F'<br>
+        60-69 should return: 'D'<br>
+        70-79 should return: 'C'<br>
+        80-89 should return: 'B'<br>
+        90-100 should return: 'A'</p>
+    <script>
+        // Write your function here:
+        const finalGrade = (num1, num2, num3) => {
+            if (num1 < 0 || num1 > 100 || num2 < 0 || num2 > 100 || num3 < 0 || num3 > 100) {
+                return 'You have entered an invalid grade.';
+            }
+
+            let average = (num1 + num2 + num3) / 3;
+
+            if (average >= 0 && average <= 59) {
+                return 'F';
+            } else if (average >= 60 && average <= 69) {
+                return 'D';
+            } else if (average >= 70 && average <= 79) {
+                return 'C';
+            } else if (average >= 80 && average <= 89) {
+                return 'B';
+            } else if (average >= 90 && average <= 100) {
+                return 'A';
+            } else {
+                return 'You have entered an invalid grade.';
+            }
+        }
+
+
+
+
+
+        // Uncomment the line below when you're ready to try out your function
+        console.log(finalGrade(99, 92, 95)) // Should print 'A'
+
+        // We encourage you to add more function calls of your own to test your code!
+    </script>
+
     <p></p>
-    
+    <script>
+        // Write your function here:
+        const reportingForDuty = (rank, lastName) => {
+            return `${rank} ${lastName} reporting for duty!`;
+        }
+
+
+        // Uncomment the line below when you're ready to try out your function
+        console.log(reportingForDuty('Private', 'Fido')) // Should return 'Private Fido reporting for duty!'
+
+        // We encourage you to add more function calls of your own to test your code!
+    </script>
+
+    <p>We wrote a function, rollTheDice(), which is supposed to simulate two dice being rolled and totalled. It’s close
+        to doing what we want, but there’s something not quite right. Can you fix our code, please?</p>
+    <script>
+        const rollTheDice = () => {
+            // Math.random() gives us a random number from 0 up to, but not including, 1
+            // We multiplied that by 6 to get a number between 0 and up to, but not including, 6
+            // But since we actually wanted numbers from 1 to 6, inclusive, we added 1
+            let die1 = Math.floor(Math.random() * 6) + 1
+            let die2 = Math.floor(Math.random() * 6) + 1
+            //added console logs to check values. Needed to add Math.floor() above to round down. 
+            console.log(die1);
+            console.log(die2);
+            return die1 + die2
+        }
+
+        rollTheDice(1, 1);
+    </script>
+
+    <p>Though an object’s mass remains consistent throughout the universe, weight is determined by the force of gravity
+        on an object. Since different planets have different gravity, the same object would weigh different amounts on
+        each of those planets! Cool, huh?<br><br>
+
+        Write a function, calculateWeight(). It should:<br><br>
+
+        have two parameters: earthWeight and planet<br>
+        expect earthWeight to be a number<br>
+        expect planet to be a string<br>
+        return a number representing what that Earth-weight would equate to on the planet passed in.<br><br>
+        Handle the following cases:<br>
+        'Mercury' weight = earthWeight * 0.378<br>
+        'Venus' weight = earthWeight * 0.907<br>
+        'Mars' weight = earthWeight * 0.377<br>
+        'Jupiter' weight = earthWeight * 2.36<br>
+        'Saturn' weight = earthWeight * 0.916<br>
+        For all other inputs, return 'Invalid Planet Entry. Try: Mercury, Venus, Mars, Jupiter, or Saturn.'</p>
+    <script>
+        //note: my issues were that I needed to remove "*=" and just use "*". 
+
+        // Write your function here:
+        const calculateWeight = (earthWeight, planet) => {
+            switch (planet) {
+                case 'Mercury':
+                    return earthWeight * .378;
+                case 'Venus':
+                    return earthWeight * .907;
+                case 'Mars':
+                    return earthWeight * .377;
+                case 'Jupiter':
+                    return earthWeight * 2.36;
+                case 'Saturn':
+                    return earthWeight * .916;
+                default:
+                    return 'Invalid Planet Entry. Try: Mercury, Venus, Mars, Jupiter, or Saturn.';
+            }
+        };
+
+        // Uncomment the line below when you're ready to try out your function
+        console.log(calculateWeight(100, 'Jupiter')) // Should print 236
+
+        // We encourage you to add more function calls of your own to test your code!
+    </script>
+
+    <p>
+        It can be hard to keep track of what’s truthy or falsy in JavaScript. Write a function, truthyOrFalsy(), that
+        takes in any value and returns true if that value is truthy and false if that value is falsy.</p>
+    <script>
+        // Write your function here:
+        const truthyOrFalsy = value => {
+            if (value) {
+                return true;
+            } else {
+                return false;
+            }
+        };
+
+        // Uncomment the line below when you're ready to try out your function
+        console.log(truthyOrFalsy(0)) // Should print false
+
+        // We encourage you to add more function calls of your own to test your code!
+    </script>
+
+    <p>A person’s number of imaginary friends are always 25% (or 1/4) of their total friends.
+
+        Write a function, numImaginaryFriends(), that takes in the total number of friends a person has and returns the
+        number of imaginary friends they have.
+
+        Since friends can only come in whole numbers, be sure to round your result up to the nearest whole number before
+        returning it.
+
+        The JavaScript Math.ceil() function will come in handy. Check out the documentation here to figure out how it
+        works.</p>
+    <script>
+        // Write your function here:
+        const numImaginaryFriends = (num) => {
+            return Math.ceil(num * .25);
+        }
+
+        // Uncomment the lines below when you're ready to try out your function
+        console.log(numImaginaryFriends(20)) // Should print 5
+        console.log(numImaginaryFriends(10)) // Should print 3 (2.5 rounded up!)
+
+        // We encourage you to add more function calls of your own to test your code!
+    </script>
+
+    <p>Write a function, sillySentence(), that has 3 string parameters and returns the following silly sentence with the
+        blanks filled in by the arguments passed into the function:</p>
+    <script>
+        // Write your function here:
+
+        const sillySentence = (adj, verb, noun) => {
+            return `I am so ${adj} because I ${verb} coding! Time to write some more awesome ${noun}!`;
+        }
+
+        // Uncomment the line below when you're ready to try out your function
+        console.log(sillySentence('excited', 'love', 'functions'))
+
+        // We encourage you to add more function calls of your own to test your code!
+    </script>
+
+    <script>
+        //my attempt
+
+        // Write your function here:
+        const howOldMine = (age, year) => {
+            const currYear = new Date().getFullYear();
+            let calcAge = year - currYear;
+            let futureDif = calcAge + age;
+
+            //current currYear - year entered
+            let pastAge = currYear - year;
+            //get past currYear age - current year
+            let yearBorn = currYear - age;
+            let pastDif = yearBorn - year;
+
+            let midAge = year - yearBorn;
+
+            if (year > currYear) {
+                return `You will be ${futureDif} in the year ${year}`;
+            } else if (year < currYear) {
+                return `The year ${year} was ${pastDif} years before you were born`;
+            } else if (year > yearBorn && year < currYear) {
+                return `You were ${midAge} in the year ${year}`;
+            };
+        }
+
+
+
+        console.log(howOldMine(35, 1990));
+        // Once your function is written, write function calls to test your code!
+
+
+
+        //solution
+
+        // Write your function here:
+        const howOld = (age, year) => {
+            let dateToday = new Date();
+            let thisYear = dateToday.getFullYear();
+
+            const yearDif = year - thisYear;
+            const newAge = age + yearDif;
+
+            if (newAge > age) {
+                return `You will be ${newAge} in the year ${year}`;
+            } else if (newAge < 0) {
+                return `The year ${year} was ${-newAge} years before you were born`;
+            } else {
+                return `You were ${newAge} in the year ${year}`;
+            }
+        }
+
+
+
+        console.log(howOld(35, 1990));
+        // Once your function is written, write function calls to test your code!
+    </script>
+
+    <p>Given the percentage of DNA shared between two people, you can calculate their likely familial relationship.
+
+        We wrote a function, whatRelation(), that has one number parameter, percentSharedDNA, and returns the likely
+        relationship. We expect the number passed in to always be an integer from 0 to 100, but for some reason it’s not
+        working!
+
+        Here’s how it’s supposed to calculate the relationship:
+
+        100 should return 'You are likely identical twins.'
+        35-99 should return 'You are likely parent and child or full siblings.'
+        14-34 should return 'You are likely grandparent and grandchild, aunt/uncle and niece/nephew, or half siblings.'
+        6-13 should return 'You are likely 1st cousins.'
+        3-5 should return 'You are likely 2nd cousins.'
+        1-2 should return 'You are likely 3rd cousins.'
+        0 should return 'You are likely not related.'</p>
+    <script>
+        const whatRelation = percentSharedDNA => {
+            if (percentSharedDNA === 100) {
+                return 'You are likely identical twins.'
+            }
+            if (percentSharedDNA > 34) {
+                return 'You are likely parent and child or full siblings.'
+            }
+            if (percentSharedDNA < 35 && percentSharedDNA > 13) {
+                return 'You are likely grandparent and grandchild, aunt/uncle and niece/nephew, or half siblings.'
+            }
+            if (percentSharedDNA > 5 && percentSharedDNA < 14) {
+                return 'You are likely !st cousins.'
+            }
+            if (percentSharedDNA >= 3 && percentSharedDNA <= 5) {
+                return 'You are likely 2nd cousins.'
+            }
+            if (percentSharedDNA == 1 || percentSharedDNA == 2) {
+                return 'You are likely 3rd cousins'
+            }
+            return 'You are likely not related.'
+        }
+
+        console.log(whatRelation(34))
+        // Should print 'You are likely grandparent and grandchild, aunt/uncle and niece/nephew, or half siblings.'
+
+        console.log(whatRelation(3))
+        // Should print 'You are likely 2nd cousins.'
+    </script>
+
+    <p>Create a function, tipCalculator(), that has two parameters, a string representing the quality of the service
+        received and a number representing the total cost.
+
+        Return the tip, as a number, based on the following:
+        ‘bad’ should return a 5% tip
+        ‘ok’ should return a 15% tip
+        ‘good’ should return a 20% tip
+        ‘excellent’ should return a 30% tip
+        all other inputs should default to 18%
+
+        tipCalculator('good', 100) // Should return 20</p>
+    <script>
+        // Write your function here:
+        const tipCalculator = (quality, total) => {
+            if (quality === 'bad') {
+                return total * .05;
+            } else if (quality === 'ok') {
+                return total * .15;
+            } else if (quality === 'good') {
+                return total * .20;
+            } else if (quality === 'excellent') {
+                return total * .30;
+            } else {
+                return total * .18;
+            }
+        }
+
+
+        // Uncomment the line below when you're ready to try out your function
+        console.log(tipCalculator('good', 100)) //should return 20
+
+        // We encourage you to add more function calls of your own to test your code!
+    </script>
+
+    <p>Write a function, toEmoticon(), that takes in a string and returns the corresponding emoticon as a string. Use a
+        switch/case, and cover these cases:
+
+        'shrug' should return '|_{"}_|'
+        'smiley face' should return ':)'
+        'frowny face' should return':('
+        'winky face' should return ';)'
+        'heart' should return
+        <!-- <3 -->
+        any other input should return |_(* ~ *)_| </p>
+    <script>
+        // Write your function here:
+        const toEmoticon = (reaction) => {
+            switch (reaction) {
+                case 'shrug':
+                    return '|_{"}_|';
+                case 'smiley face':
+                    return ':)';
+                case 'frowny face':
+                    return ':(';
+                case 'winky face':
+                    return ';)';
+                case 'heart':
+                    return '<3';
+                default:
+                    return '|_(* ~ *)_|';
+            }
+        }
+
+        // Uncomment the line below when you're ready to try out your function console.
+
+        log(toEmoticon("whatever"));
+        console.log(toEmoticon("shrug"));
+        console.log(toEmoticon("smiley face"));
+        console.log(toEmoticon("winky face"));
+        console.log(toEmoticon("frowny face"));
+        console.log(toEmoticon("heart"));
+        // Should print '|_(* ~ *)_|' // We encourage you to add more function calls of your own to test your code!
+    </script>
 </body>
 
 </html>
