@@ -39,7 +39,7 @@ const compareGuesses = (humanGuess, compGuess, target) => {
             return true;
         }
     }
-    cpuVsHuman(humanCalc(), compCalc());
+    return cpuVsHuman(humanCalc(), compCalc());
 }
 
 
