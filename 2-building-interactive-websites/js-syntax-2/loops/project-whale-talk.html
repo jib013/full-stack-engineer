@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Loops Project: Whale Talk</title>
+</head>
+
+<body>
+
+    <p>Whale Talk
+        Take a phrase like ‘turpentine and turtles’ and translate it into its “whale talk” equivalent: ‘UUEEIEEAUUEE’.
+
+        There are a few simple rules for translating text to whale language:
+
+        There are no consonants. Only vowels excluding “y”.
+        The u‘s and e‘s are extra long, so we must double them in our program.
+        Once we have converted text to the whale language, the result is sung slowly, as is a custom in the ocean.
+
+        To accomplish this translation, we can use our knowledge of loops. Let’s get started!
+
+        If you get stuck during this project or would like to see an experienced developer work through it, click “Get
+        Unstuck“ to see a project walkthrough video.</p>
+
+    <p>Note: To confirm, if you change the value of input to ‘turpentine and turtles’, the whale version would read:
+        'UUEEIEEAUUEE'.</p>
+    <script>
+        const input = 'always be cheeching';
+        const vowels = ['a', 'e', 'i', 'o', 'u'];
+        let resultsArray = [];
+
+        for (i = 0; i < input.length; i++) {
+            //check length of array
+            //console.log('i is ' + i);
+
+            //The IF statements belong before the inner for loop block inside the outer for loop. This is because you only want to perform this check once for every letter in the input.
+            if (input[i] === 'e') {
+                resultsArray.push(input[i]);
+            }
+            if (input[i] === 'u') {
+                resultsArray.push(input[i]);
+            }
+            for (j = 0; j < vowels.length; j++) {
+                //console.log('j is ' + j);
+                if (input[i] === vowels[j]) {
+                    resultsArray.push(vowels[j]);
+                }
+            }
+        }
+
+        const resultString = resultsArray.join(' ').toUpperCase();
+        console.log(resultString);
+        console.log(resultsArray);
+    </script>
+
+</body>
+
+</html>
