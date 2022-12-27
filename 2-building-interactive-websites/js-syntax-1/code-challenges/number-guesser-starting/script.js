@@ -15,13 +15,14 @@ const compareGuesses = (humanGuess, compGuess, target) => {
         if (isNaN(humanGuess)) {
             alert("Please enter a number between 0 and 9.");
         } else {
+            //returns difference between two numbers
             return Math.abs(humanGuess - target);
         }
     }
 
-    console.log(`humanGuess: ${humanGuess}`);
-    console.log(`compGuess: ${compGuess}`);
-    console.log(`target: ${target}`);
+    // console.log(`humanGuess: ${humanGuess}`);
+    // console.log(`compGuess: ${compGuess}`);
+    // console.log(`target: ${target}`);
 
 
     const compCalc = () => {
@@ -29,18 +30,19 @@ const compareGuesses = (humanGuess, compGuess, target) => {
     }
 
     const cpuVsHuman = (guess1, guess2) => {
-        console.log(`guess1: ${guess1}`);
-        console.log(`guess2: ${guess2}`);
+        // console.log(`guess1: ${guess1}`);
+        // console.log(`guess2: ${guess2}`);
 
         if (guess1 === guess2) {
-            return true;
+            return true; // human wins
         } else if (guess1 > guess2) {
             return false;
         } else if (guess1 < guess2){
             return true;
         }
     }
-    console.log(`cpuVsHuman return value: ${cpuVsHuman(humanCalc(), compCalc())}`);
+    return cpuVsHuman(humanCalc(), compCalc());
+    // console.log(`cpuVsHuman return value: ${cpuVsHuman(humanCalc(), compCalc())}`);
 }
 
 
@@ -64,10 +66,10 @@ const advanceRound = () => {
     currentRoundNumber++;
 }
 
-compareGuesses(2,6,2);
-compareGuesses(3,6,4);
-compareGuesses(4,6,5);
-compareGuesses(5,6,9);
+// compareGuesses(2,6,2);
+// compareGuesses(3,6,4);
+// compareGuesses(4,6,5);
+// compareGuesses(5,6,9);
 
 /* ATTEMPT 2
 
