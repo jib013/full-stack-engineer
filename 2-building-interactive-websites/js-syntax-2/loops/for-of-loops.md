@@ -1,4 +1,4 @@
-### The for...of Loop
+# The for...of Loop
 
 A cleaner syntax for iterating through items, one by one.
 
@@ -192,7 +192,7 @@ for (let pokemon of pokemonList) {
 }
 
 
-## Review
+# Review
 
 Congratulations! You have now been introduced to for...of and have successfully used it. In this article, you have learned how to do the following:
 

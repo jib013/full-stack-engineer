@@ -1,4 +1,4 @@
-### LOOPS
+# LOOPS
 Loops
 A loop is a programming tool that repeats a set of instructions until a specified condition, called a stopping condition is reached. As a programmer, you’ll find that you rely on loops all the time! You’ll hear the generic term iterate when referring to loops; iterate simply means “to repeat”.
 
@@ -265,7 +265,7 @@ console.log('And if you don\'t know, now you know..');
 
 
 
-### Review
+# Review
 Great job! In this lesson, we learned how to write cleaner code with loops. You now know:
 
 Loops perform repetitive actions so we don’t have to code that process manually every time.
