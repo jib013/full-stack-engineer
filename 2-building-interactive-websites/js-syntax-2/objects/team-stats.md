@@ -43,7 +43,7 @@ Log the team‘s _games property to check that our new game record was properly 
 
 
 
-```
+```javascript
 const team = {
   _players: [
     {firstName: 'Toddy', LastName: 'Hotty', age: 32},
