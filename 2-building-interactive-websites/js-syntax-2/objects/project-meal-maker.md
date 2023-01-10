@@ -46,7 +46,7 @@ If you want to extend your learning on this project, try adding an array of meal
 
 
 
-```
+```javascript
 const menu = {
   _meal: ' ',
   _price: 0,

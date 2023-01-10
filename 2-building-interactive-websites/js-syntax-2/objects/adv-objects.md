@@ -131,7 +131,7 @@ robot.checkEnergy();
 Accessing and updating properties is fundamental in working with objects. However, there are cases in which we don’t want other code simply accessing and updating an object’s properties. When discussing privacy in objects, we define it as the idea that only certain properties should be mutable or able to change in value.
 
 Certain languages have privacy built-in for objects, but JavaScript does not have this feature. Rather, JavaScript developers follow naming conventions that signal to other developers how to interact with a property. One common convention is to place an underscore _ before the name of a property to mean that the property should not be altered. Here’s an example of using _ to prepend a property.
-```
+```javascript
 const bankAccount = {
   _amount: 1000
 }
@@ -139,7 +139,7 @@ const bankAccount = {
 In the example above, the _amount is not intended to be directly manipulated.
 
 Even so, it is still possible to reassign _amount:
-```
+```javascript
 bankAccount._amount = 1000000;
 ```
 In later exercises, we’ll cover the use of methods called getters and setters. Both methods are used to respect the intention of properties prepended, or began, with _. Getters can return the value of internal properties and setters can safely reassign property values. For now, let’s see what happens if we can change properties that don’t have setters or getters.
@@ -156,7 +156,7 @@ Call .recharge() on robot to find out.
 
 Notice that a funky string is printed to the console! This is known as a side-effect of type-coercion. No need to worry about what this means for now, but it’s important to understand that you can cause unwanted side-effects when mutating objects and their properties.
 
-```
+```javascript
 
 const robot = {
   _energyLevel: 100,
@@ -178,7 +178,7 @@ robot.recharge();
 ## Getters
 
 Getters are methods that get and return the internal properties of an object. But they can do more than just retrieve the value of a property! Let’s take a look at a getter method:
-```
+```javascript
 const person = {
   _firstName: 'John',
   _lastName: 'Doe',
@@ -225,7 +225,7 @@ Add an else statement that returns 'System malfunction: cannot retrieve energy l
 Log the result of calling the getter method energyLevel on robot to the console.
 Notice that the method will return a formatted response rather than just accessing a property!
 
-```
+```javascript
 
 const robot = {
   _model: '1E78V2',
@@ -248,7 +248,7 @@ console.log(robot.energyLevel);
 ## Setters
 
 Along with getter methods, we can also create setter methods which reassign values of existing properties within an object. Let’s see an example of a setter method:
-```
+```javascript
 const person = {
   _age: 37,
   set age(newAge){
@@ -267,7 +267,7 @@ Notice that in the example above:
     There are different outputs depending on what values are used to reassign this._age.
 
 Then to use the setter method:
-```
+```javascript
 person.age = 40;
 console.log(person._age); // Logs: 40
 person.age = '40'; // Logs: You must assign a number to age
@@ -275,7 +275,7 @@ person.age = '40'; // Logs: You must assign a number to age
 Setter methods like age do not need to be called with a set of parentheses. Syntactically, it looks like we’re reassigning the value of a property.
 
 Like getter methods, there are similar advantages to using setter methods that include checking input, performing actions on properties, and displaying a clear intention for how the object is supposed to be used. Nonetheless, even with a setter method, it is still possible to directly reassign properties. For example, in the example above, we can still set ._age directly:
-```
+```javascript
 person._age = 'forty-five'
 console.log(person._age); // Prints forty-five
 ```
@@ -297,7 +297,7 @@ Add a setter method named numOfSensors using the set keyword. Provide a paramete
 
 
 
-```
+```javascript
 
 const robot = {
   _model: '1E78V2',
@@ -334,7 +334,7 @@ So far we’ve been creating objects individually, but there are times where we 
 
 Let’s say we wanted to create an object to represent monsters in JavaScript. There are many different types of monsters and we could go about making each monster individually but we can also use a factory function to make our lives easier. To achieve this diabolical plan of creating multiple monsters objects, we can use a factory function that has parameters:
 
-```
+```javascript
 
 const monsterFactory = (name, age, energySource, catchPhrase) => {
   return { 
@@ -374,7 +374,7 @@ Then add a method named beep without a parameter that will log 'Beep Boop' to th
 You should see 'Beep Boop' printed to the console which means the factory function produced a robot object! Play around with tinCan to check the other properties!
 
 
-```
+```javascript
 
 const robotFactory = (model, mobile) => {
   return {
@@ -400,7 +400,7 @@ tinCan.beep();
 ES6 introduced some new shortcuts for assigning properties to variables known as destructuring.
 
 In the previous exercise, we created a factory function that helped us create objects. We had to assign each property a key and value even though the key name was the same as the parameter name we assigned to it. To remind ourselves, here’s a truncated version of the factory function:
-```
+```javascript
 const monsterFactory = (name, age) => {
   return { 
     name: name,
@@ -410,7 +410,7 @@ const monsterFactory = (name, age) => {
 ```
 Imagine if we had to include more properties, that process would quickly become tedious! But we can use a destructuring technique, called property value shorthand, to save ourselves some keystrokes. The example below works exactly like the example above:
 
-```
+```javascript
 const monsterFactory = (name, age) => {
   return { 
     name,
@@ -424,7 +424,7 @@ Notice that we don’t have to repeat ourselves for property assignments!
 
 
 //ORIGINAL CODE
-```
+```javascript
 function robotFactory(model, mobile){
   return {
     model: model,
@@ -445,7 +445,7 @@ console.log(newRobot.mobile)
 
 
 //MY CODE
-```
+```javascript
 function robotFactory(model, mobile){
   return {
     model,
@@ -468,7 +468,7 @@ console.log(newRobot.mobile)
 ## Destructured Assignment
 
 We often want to extract key-value pairs from objects and save them as variables. Take for example the following object:
-```
+```javascript
 const vampire = {
   name: 'Dracula',
   residence: 'Transylvania',
@@ -481,13 +481,13 @@ const vampire = {
 
 If we wanted to extract the residence property as a variable, we could use the following code:
 
-```
+```javascript
 const residence = vampire.residence; 
 console.log(residence); // Prints 'Transylvania' 
 ```
 However, we can also take advantage of a destructuring technique called destructured assignment to save ourselves some keystrokes. In destructured assignment we create a variable with the name of an object’s key that is wrapped in curly braces { } and assign to it the object. Take a look at the example below:
 
-```
+```javascript
 const { residence } = vampire; 
 console.log(residence); // Prints 'Transylvania'
 ```
@@ -496,7 +496,7 @@ Look back at the vampire object’s properties in the first code example. Then, 
 
 We can even use destructured assignment to grab nested properties of an object:
 
-```
+```javascript
 const { day } = vampire.preferences; 
 console.log(day); // Prints 'stay inside'
 ```
@@ -513,7 +513,7 @@ If you need a reminder on how to use destructured assignment, review the example
 Take advantage of this shortcut and call the .beep() method on functionality.
 
 
-```
+```javascript
 const robot = {
   model: '1E78V2',
   energyLevel: 100,
@@ -550,7 +550,7 @@ Note: You will see errors as you work through this exercise, but by the end the 
 
 
 //Main.js
-```
+```javascript
 const robot = {
 	model: 'SAL-1000',
   mobile: true,
@@ -564,7 +564,7 @@ const robot = {
 
 Find out what we have to include by reading MDN’s Object.keys() documentation.
 
-```
+```javascript
 // What is missing in the following method call?
 const robotKeys = Object.keys(robot);
 
@@ -578,7 +578,7 @@ Declare a const variable named robotEntries and assign to it the entries of robo
 To find how to use Object.entries(), read the documentation at MDN.
 
 
-```
+```javascript
 // Declare robotEntries below this line:
 const robotEntries = Object.entries(robot);
 console.log(robotEntries);
@@ -589,7 +589,7 @@ console.log(robotEntries);
 Declare a const variable named newRobot. newRobot will be a new object that has all the properties of robot and the properties in the following object: {laserBlaster: true, voiceRecognition: true}. Make sure that you are not changing the robot object!
 
 
-```
+```javascript
 // Declare newRobot below this line:
 const newRobot = Object.assign({laserBlaster: true, voiceRecognition: true}, robot);
 
