@@ -91,3 +91,37 @@ After resetting:
     You have in essence rewound the project’s history
 
 
+
+
+### Generalizations
+
+Congratulations! You’ve learned three different ways to backtrack in Git. You can use these skills to undo changes made to your Git project.
+
+Let’s take a moment to review the new commands:
+
+    git checkout HEAD filename: Discards changes in the working directory.
+    git reset HEAD filename: Unstages file changes in the staging area.
+    git reset commit_SHA: Resets to a previous commit in your commit history.
+
+Additionally, you learned a way to add multiple files to the staging area with a single command:
+
+git add filename_1 filename_2
+
+
+
+
+### Git Stash
+
+While working on a file, you find a small bug in a separate file from a previous commit that needs to be fixed before you continue.
+
+$ git stash
+
+Running the command above will store your work temporarily for later use in a hidden directory.
+
+At this point, you can switch branches and do work elsewhere.
+
+Once the bug is fixed, you want to retrieve the code you were working on previously, you can “pop” the work that was stored when you used git stash.
+
+$ git stash pop
+
+From here, you can continue your work and commit it when ready.
