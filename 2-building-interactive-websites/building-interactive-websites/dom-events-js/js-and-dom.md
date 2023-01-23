@@ -269,3 +269,70 @@ Remove the elementToRemove element from its parent.
 ```javascript
 document.getElementById('italy-attractions').removeChild(elementToRemove);
 ```
+
+
+
+
+## Add Click Interactivity
+
+You can add interactivity to DOM elements by assigning a function to run based on an event. Events can include anything from a click to a user mousing over an element. We will learn more about events in the upcoming DOM Events with JavaScript lesson. For now, let’s take a look at how to modify an element when a click event happens.
+
+The .onclick property allows you to assign a function to run on when a click event happens on an element:
+
+let element = document.querySelector('button');
+ 
+element.onclick = function() { 
+  element.style.backgroundColor = 'blue' 
+};
+
+You can also assign the .onclick property to a function by name:
+
+let element = document.querySelector('button');
+ 
+function turnBlue() {
+   element.style.backgroundColor = 'blue';
+}
+ 
+element.onclick = turnBlue;
+
+In the above example code, when the <button> element detects a click event, the backgroundColor will change to 'blue'.
+
+
+
+
+
+```javascript
+let element = document.querySelector('button');
+
+function turnButtonRed(){
+  // Add code to turn button red
+  element.style.backgroundColor = 'red';
+  element.style.color = 'white';
+  element.innerHTML = 'Red Button';
+}
+
+element.onclick = turnButtonRed;
+```
+
+
+
+
+## Review
+
+In this lesson, you manipulated a webpage structure by leveraging the Document Object Model (DOM) interface in JavaScript.
+
+Let’s review what we learned:
+
+    The document keyword grants access to the root of the DOM in JavaScript.
+    The DOM Interface allows you to select a specific element with CSS selectors by using the .querySelector() method.
+    You can access an element directly by its ID with the .getElementById() method which returns a single element.
+    You can access an array of elements with the .getElementsByClassName() and .getElementsByTagName() methods, then call a single element by referencing its placement in the array.
+    The .innerHTML and .style properties allow you to modify an element by changing its contents or style respectively.
+    You can create, append, and remove elements by using the .createElement(),.appendChild() and .removeChild() methods respectively.
+    The .onclick property can add interactivity to a DOM element based on a click event.
+    The .children property returns a list of an element’s children and the .parentNode property returns the element’s closest connected node in the direction towards the root.
+
+
+Walk through on adding JS to a static website
+
+https://www.codecademy.com/journeys/full-stack-engineer/paths/fscj-22-building-interactive-websites/tracks/fscj-22-building-interactive-websites/modules/wdcp-22-javascript-and-the-dom-56951714-b66d-4898-88b7-8f4696ed549f/videos/create-a-javascript-website 
