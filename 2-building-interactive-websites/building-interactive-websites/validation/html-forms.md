@@ -142,3 +142,32 @@ In the example above, every time the slider moves by one, the value of the <inpu
 
 
 
+## Checkbox Input
+
+So far the types of inputs we’ve allowed were all single choices. But, what if we presented multiple options to users and allow them to select any number of options? Sounds like we could use checkboxes! In a <form> we would use the <input> element and set type="checkbox". Examine the code used to create multiple checkboxes:
+
+<form>
+  <p>Choose your pizza toppings:</p>
+  <label for="cheese">Extra cheese</label>
+  <input id="cheese" name="topping" type="checkbox" value="cheese">
+  <br>
+  <label for="pepperoni">Pepperoni</label>
+  <input id="pepperoni" name="topping" type="checkbox" value="pepperoni">
+  <br>
+  <label for="anchovy">Anchovy</label>
+  <input id="anchovy" name="topping" type="checkbox" value="anchovy">
+</form>
+
+Which renders: HTML form asking user to select pizza toppings and three topping selections as checkboxes
+
+Notice in the example provided:
+
+    there are assigned values to the value attribute of the checkboxes. These values are not visible on the form itself, that’s why it is important that we use an associated <label> to identify the checkbox.
+    each <input> has the same value for the name attribute. Using the same name for each checkbox groups the <input>s together. However, each <input> has a unique id to pair with a <label>.
+
+Alright, time to use checkboxes in our code!
+
+
+
+
+
