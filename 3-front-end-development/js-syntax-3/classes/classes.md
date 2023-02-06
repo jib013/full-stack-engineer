@@ -877,19 +877,19 @@ class Nurse extends HospitalEmployee {
   }
 }
 
-
 const nurseOlynyk = new Nurse('Olynyk', ['Trauma','Pediatrics']);
 
 nurseOlynyk.takeVacationDays(5);
 console.log(nurseOlynyk.remainingVacationDays);
+
 nurseOlynyk.addCertification('Genetics');
 console.log(nurseOlynyk.certifications);
-
 
 class Doctor extends HospitalEmployee {
   constructor(name, insurance) {
     super(name);
     this._insurance = insurance;
+    this._remainingVactionDays = 20;
   }
 
   get insurance() {
@@ -903,7 +903,11 @@ class Doctor extends HospitalEmployee {
 
 const doctorWho = new Doctor('Who', ['Medical', 'Professional']);
 
-doctorWho.addInsurance('Med 1', 'Professional Ins');
+doctorWho.takeVacationDays(7);
+console.log(doctorWho.remainingVactionDays);
+
+doctorWho.addInsurance('Med 1');
 console.log(doctorWho.insurance);
+
 
 ```
