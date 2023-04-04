@@ -1,0 +1,28 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #0e1538;
+    gap: 200px;
+}
+
+.box {
+    position: relative;
+    width: 300px;
+    height: 400px;
+    background: #000;
+}
+
+.box::before {
+    content: '';
+    position:absolute;
+    inset: -3px;
+    box-shadow: 0 0 0 20px #070c23;
+}
